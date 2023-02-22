@@ -223,7 +223,7 @@ class OneLoginClient
         if (property_exists($content, 'data')) {
             $data = $content->data;
         }
-        if (count($data) == 1 && empty($data[0])) {
+        if (is_array($data) && count($data) == 1 && empty($data[0])) {
             return [];
         }
 
